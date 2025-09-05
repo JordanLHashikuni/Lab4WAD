@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light">
+<div class="container">
+    <header>
+        <h1>Student Registration</h1>
+        <!-- Dark/Light Mode Toggle -->
+        <div class="theme-toggle">
+            <label>
+                <input type="checkbox" id="themeSwitch"> Dark Mode
+            </label>
+        </div>
+    </header>
+
+    <!-- Registration Form -->
+    <form id="regForm" novalidate>
+        <label for="first">First Name *</label>
+        <input type="text" id="first" name="first" required>
+        <small class="error" id="err-first"></small>
+
+        <label for="last">Last Name *</label>
+        <input type="text" id="last" name="last" required>
+        <small class="error" id="err-last"></small>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+        <small class="error" id="err-email"></small>
+
+        <label for="prog">Programme *</label>
+        <select id="prog" name="prog" required>
+            <option value="">-- Select Programme --</option>
+            <option value="CS">Computer Science</option>
+            <option value="IS">Information Systems</option>
+            <option value="IT">Information Technology</option>
+        </select>
+        <small class="error" id="err-prog"></small>
+
+        <fieldset>
+            <legend>Year of Study *</legend>
+            <label><input type="radio" name="year" value="1" required> 1</label>
+            <label><input type="radio" name="year" value="2"> 2</label>
+            <label><input type="radio" name="year" value="3"> 3</label>
+            <label><input type="radio" name="year" value="4"> 4</label>
+        </fieldset>
+        <small class="error" id="err-year"></small>
+
+        <fieldset>
+            <legend>Interests</legend>
+            <label><input type="checkbox" name="interests" value="AI"> AI</label>
+            <label><input type="checkbox" name="interests" value="Web"> Web Dev</label>
+            <label><input type="checkbox" name="interests" value="Networking"> Networking</label>
+            <label><input type="checkbox" name="interests" value="Security"> Security</label>
+        </fieldset>
+
+        <label for="photo">Photo URL</label>
+        <input type="url" id="photo" name="photo" placeholder="https://example.com/photo.jpg">
+
+        <div aria-live="polite" id="live"></div>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <!-- Cards -->
+    <h2>Profile Cards</h2>
+    <div id="cards"></div>
+
+    <!-- Summary Table -->
+    <h2>Summary Table</h2>
+    <table id="summary">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Programme</th>
+            <th>Year</th>
+            <th>Interests</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

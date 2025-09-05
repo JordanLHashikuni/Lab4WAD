@@ -1,0 +1,230 @@
+/* ========================= */
+/* BASE STYLES (Light Mode) */
+/* ========================= */
+body.light {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f6ff;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #004080;
+}
+
+/* Form Styling */
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label, legend {
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+input, select, button {
+    padding: 10px;
+    border: 1px solid #cce0ff;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.error {
+    color: #cc0000;
+    font-size: 0.9em;
+    margin-top: -5px;
+}
+
+button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover {
+    background: #0056b3;
+}
+
+/* Cards Section */
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card-person {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 240px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+    flex: 1 1 220px;
+    max-width: 280px;
+}
+.card-person:hover {
+    transform: scale(1.03);
+}
+
+.card-person img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #cce0ff;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 3px;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    font-size: 0.8em;
+}
+
+/* Table Section */
+#summary {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#summary th {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-size: 0.95em;
+}
+
+#summary td {
+    padding: 10px;
+    border: 1px solid #e6f0ff;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+#summary tr:nth-child(even) {
+    background: #f7fbff;
+}
+
+/* ========================= */
+/* DARK MODE STYLES */
+/* ========================= */
+body.dark {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark form {
+    background: #1e1e1e;
+    border: 1px solid #333;
+}
+
+body.dark input, body.dark select {
+    background: #2a2a2a;
+    border: 1px solid #555;
+    color: #e0e0e0;
+}
+
+body.dark button {
+    background: #3399ff;
+}
+
+body.dark button:hover {
+    background: #0066cc;
+}
+
+body.dark .card-person {
+    background: #1e1e1e;
+    border: 1px solid #333;
+}
+
+body.dark #summary {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+}
+
+body.dark #summary th {
+    background: #3399ff;
+    color: #fff;
+}
+
+body.dark #summary tr:nth-child(even) {
+    background: #2a2a2a;
+}
+
+/* ========================= */
+/* RESPONSIVE DESIGN */
+/* ========================= */
+@media (max-width: 768px) {
+    form { padding: 15px; }
+    #cards { flex-direction: column; align-items: center; }
+    .card-person { width: 100%; max-width: 350px; }
+}
+
+@media (max-width: 480px) {
+    h1, h2 { font-size: 1.2em; }
+    button { padding: 8px; font-size: 0.9em; }
+    .card-person img { width: 90px; height: 90px; }
+    #summary { font-size: 0.8em; }
+}
+/* Flex container for checkboxes and radio buttons */
+fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+/* Align label text with checkbox/radio */
+fieldset label {
+    display: flex;
+    align-items: center; /* vertical align */
+    gap: 5px; /* space between box and text */
+    font-weight: normal;
+}
+
+/* Slightly larger boxes for easier clicking */
+input[type="radio"], input[type="checkbox"] {
+    transform: scale(1.1);
+}
+
+/* ========================= */
+/* Responsive adjustments */
+/* ========================= */
+@media (max-width: 480px) {
+    /* Stack checkboxes vertically on mobile */
+    fieldset {
+        flex-direction: column;
+        align-items: flex-start; /* left-align labels */
+    }
+}
